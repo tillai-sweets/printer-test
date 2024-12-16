@@ -41,7 +41,8 @@ Future<dynamic> generateInvoiceView({
       },
     ),
   );
-  return pdf;
+  return await pdf.save();
+  // return pdf;
 }
 
 bool _isStringNullOrEmpty(String? value) => (value == null || value.isEmpty);

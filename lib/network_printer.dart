@@ -1,15 +1,69 @@
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
+import 'package:flutter/services.dart';
 import 'package:flutter_esc_pos_utils/flutter_esc_pos_utils.dart';
 import 'package:flutter_esc_pos_network/flutter_esc_pos_network.dart';
 import 'package:printing/printing.dart';
 
+import 'gen/assets.gen.dart';
 import 'message.dart';
 
 import 'package:image/image.dart' as img;
 
 class NetworkPrinter {
+  Future<List<int>> testTicketWithImage() async {
+    final profile = await CapabilityProfile.load();
+    final generator = Generator(PaperSize.mm80, profile);
+    List<int> bytes = [];
+
+    // Add text to the ticket
+    bytes += generator.text(
+      'Tillai Bakery',
+      styles: const PosStyles(
+        align: PosAlign.center,
+        bold: true,
+        height: PosTextSize.size2,
+        width: PosTextSize.size2,
+      ),
+      linesAfter: 1,
+    );
+
+    // Load an image from assets
+    final ByteData data = await rootBundle.load(Assets.images.tillaiLogo.path);
+    final Uint8List imgBytes = data.buffer.asUint8List();
+
+    // Print the image
+    bytes += generator.imageRaster(
+      img.decodeImage(imgBytes)!, // Decode the image using the `image` package
+      align: PosAlign.center,
+    );
+
+    // Add more text to the ticket
+    bytes += generator.text('Thank you for your visit!',
+        styles: const PosStyles(align: PosAlign.center), linesAfter: 2);
+
+    bytes += generator.cut();
+    return bytes;
+  }
+
+  Future<String?> printTicketWithImage({
+    required String ipAddress,
+  }) async {
+    final data = await testTicketWithImage();
+    final printer = PrinterNetworkManager(ipAddress);
+    final connect = await printer.connect();
+
+    if (connect == PosPrintResult.success) {
+      final result = await printer.printTicket(data);
+      printer.disconnect();
+      return result.msg;
+    } else {
+      print('Connection Error: ${connect.msg}');
+    }
+    return null;
+  }
+
   Future<List<int>> testTicket() async {
     final profile = await CapabilityProfile.load();
     final generator = Generator(PaperSize.mm80, profile);
@@ -67,66 +121,6 @@ class NetworkPrinter {
     return bytes;
   }
 
-  // Future<void> printTicket(List<int> ticket) async {
-  //   final printer = PrinterNetworkManager('192.168.1.100');
-  //   PosPrintResult connect = await printer.connect();
-  //   inspect(connect);
-  //   if (connect == PosPrintResult.success) {
-  //     PosPrintResult printing = await printer.printTicket(ticket);
-
-  //     print(printing.msg);
-  //     printer.disconnect();
-  //   }
-  // }
-
-  Future<List<int>> _convertImageToEscPos(ui.Image image) async {
-    final profile = await CapabilityProfile.load();
-    final generator = Generator(PaperSize.mm80, profile);
-    List<int> bytes = [];
-
-    // Convert ui.Image to Uint8List
-    final ByteData? byteData =
-        await image.toByteData(format: ui.ImageByteFormat.png);
-    if (byteData != null) {
-      final Uint8List imgBytes = byteData.buffer.asUint8List();
-
-      // Decode Uint8List to Image format using the 'image' package
-      final img.Image? decodedImage = img.decodeImage(imgBytes);
-      if (decodedImage != null) {
-        bytes += generator.imageRaster(
-          decodedImage,
-          align: PosAlign.center,
-        );
-      }
-    }
-
-    bytes += generator.feed(2);
-    bytes += generator.cut();
-
-    return bytes;
-  }
-
-  Future<List<int>> convertPdfToEscPos(Uint8List pdfData) async {
-    List<int> bytes = [];
-    final profile = await CapabilityProfile.load();
-    final generator = Generator(PaperSize.mm80, profile);
-
-    try {
-      // Use await-for to process the Stream<PdfRaster>
-      await for (final pdfRaster in Printing.raster(pdfData, dpi: 200)) {
-        final ui.Image image = await pdfRaster.toImage();
-        bytes += await _convertImageToEscPos(image);
-      }
-
-      // Add a final feed and cut command
-      bytes += generator.feed(2);
-      bytes += generator.cut();
-    } catch (e) {
-      showErrorSnackbar(message: 'Error converting PDF to ESC/POS: $e');
-    }
-    return bytes;
-  }
-
   Future<String?> printTicket({
     required List<int> data,
     required String ipAddress,
@@ -142,6 +136,77 @@ class NetworkPrinter {
       showErrorSnackbar(message: 'Connection Error: ${connect.msg}');
     }
     return null;
+  }
+
+  // Future<void> printTicket(List<int> ticket) async {
+  //   final printer = PrinterNetworkManager('192.168.1.100');
+  //   PosPrintResult connect = await printer.connect();
+  //   inspect(connect);
+  //   if (connect == PosPrintResult.success) {
+  //     PosPrintResult printing = await printer.printTicket(ticket);
+
+  //     print(printing.msg);
+  //     printer.disconnect();
+  //   }
+  // }
+
+  Future<img.Image> _convertUiImageToImgImage(ui.Image image) async {
+    final ByteData? byteData =
+        await image.toByteData(format: ui.ImageByteFormat.rawRgba);
+    if (byteData == null) {
+      throw Exception('Failed to get ByteData from the image.');
+    }
+
+    final Uint8List rgbaBytes = byteData.buffer.asUint8List();
+
+    // Convert raw RGBA bytes to img.Image
+    return img.Image.fromBytes(
+      width: image.width,
+      height: image.height,
+      bytes: rgbaBytes.buffer,
+      format: img.Format.uint8,
+      numChannels: 4,
+    );
+  }
+
+  Future<List<int>> _convertImageToEscPos(ui.Image image) async {
+    final profile = await CapabilityProfile.load();
+    final generator = Generator(PaperSize.mm80, profile);
+    List<int> bytes = [];
+
+    // Convert ui.Image to img.Image
+    final img.Image rasterImage = await _convertUiImageToImgImage(image);
+
+    bytes += generator.imageRaster(
+      rasterImage,
+      align: PosAlign.center,
+    );
+
+    bytes += generator.feed(2);
+    bytes += generator.cut();
+
+    return bytes;
+  }
+
+  Future<List<int>> convertPdfToEscPos(Uint8List pdfData) async {
+    List<int> bytes = [];
+    final profile = await CapabilityProfile.load();
+    final generator = Generator(PaperSize.mm80, profile);
+
+    try {
+      // Use await-for to process each rasterized PDF page
+      await for (final pdfRaster in Printing.raster(pdfData, dpi: 200)) {
+        final ui.Image pageImage = await pdfRaster.toImage();
+        bytes += await _convertImageToEscPos(pageImage);
+      }
+
+      bytes += generator.feed(2);
+      bytes += generator.cut();
+    } catch (e) {
+      showErrorSnackbar(message: 'Error converting PDF to ESC/POS: $e');
+      print('Error converting PDF to ESC/POS: $e');
+    }
+    return bytes;
   }
 
   Future<String?> printPdf({

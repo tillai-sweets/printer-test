@@ -41,13 +41,15 @@ class _PrinterTestScreenState extends State<PrinterTestScreen> {
             ),
             ElevatedButton(
                 onPressed: () async {
-                  // var data = await _networkPrinter.testTicket();
-                  var logoBytes =
-                      await _loadImageFromAssets(Assets.images.tillaiLogo.path);
-                  var pdfBytes =
-                      await generateInvoiceView(logoBytes: logoBytes);
-                  _networkPrinter.printPdf(
-                      pdfData: pdfBytes, ipAddress: '192.168.1.100');
+                  // var data = await _networkPrinter.testTicketWithImage();
+                  await _networkPrinter.printTicketWithImage(
+                      ipAddress: '192.168.1.100');
+                  // var logoBytes =
+                  //     await _loadImageFromAssets(Assets.images.tillaiLogo.path);
+                  // var pdfBytes =
+                  //     await generateInvoiceView(logoBytes: logoBytes);
+                  // _networkPrinter.printPdf(
+                  //     pdfData: pdfBytes, ipAddress: '192.168.1.100');
                 },
                 child: Text('Print'))
           ],
