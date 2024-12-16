@@ -8,7 +8,6 @@ import 'package:printing/printing.dart';
 
 import 'gen/assets.gen.dart';
 import 'message.dart';
-
 import 'package:image/image.dart' as img;
 
 class NetworkPrinter {
@@ -17,7 +16,7 @@ class NetworkPrinter {
     final generator = Generator(PaperSize.mm80, profile);
     List<int> bytes = [];
 
-    // Add text to the ticket
+    // Add header text
     bytes += generator.text(
       'Tillai Bakery',
       styles: const PosStyles(
@@ -29,17 +28,26 @@ class NetworkPrinter {
       linesAfter: 1,
     );
 
-    // Load an image from assets
+    // Load the image from assets
     final ByteData data = await rootBundle.load(Assets.images.tillaiLogo.path);
     final Uint8List imgBytes = data.buffer.asUint8List();
 
-    // Print the image
-    bytes += generator.imageRaster(
-      img.decodeImage(imgBytes)!, // Decode the image using the `image` package
-      align: PosAlign.center,
-    );
+    // Decode the image using the `image` package
+    final img.Image? decodedImage = img.decodeImage(imgBytes);
 
-    // Add more text to the ticket
+    if (decodedImage != null) {
+      // Convert the image to raster format for ESC/POS printers
+      final img.Image resizedImage = img.copyResize(decodedImage,
+          width: 384); // Resize for 80mm printer width
+      bytes += generator.imageRaster(
+        resizedImage,
+        align: PosAlign.center,
+      );
+    } else {
+      throw Exception("Failed to decode image.");
+    }
+
+    // Add footer text
     bytes += generator.text('Thank you for your visit!',
         styles: const PosStyles(align: PosAlign.center), linesAfter: 2);
 
@@ -63,6 +71,8 @@ class NetworkPrinter {
     }
     return null;
   }
+
+//Assets.images.tillaiLogo.path
 
   Future<List<int>> testTicket() async {
     final profile = await CapabilityProfile.load();
