@@ -1,0 +1,56 @@
+{
+    "items": [
+        {
+            "id": "95db2c46-612b-4455-bbbe-cba6bf6cfe23",
+            "code": "CT-04",
+            "name": "ICE-CAKE",
+            "hasHalfKg": true,
+            "weightRangeFrom": 0.5,
+            "weightRangeTo": 15,
+            "trackInfo": null,
+            "flavours": null,
+            "active": null,
+            "createdAt": "2024-11-15T15:14:51.472000000Z",
+            "updatedAt": "2024-11-15T15:14:51.472000000Z"
+        },
+        {
+            "id": "ae142499-6f03-4d6c-b8fe-5cb90d26ad33",
+            "code": "CT-01",
+            "name": "FRESH FRUIT CAKE",
+            "hasHalfKg": true,
+            "weightRangeFrom": 0.5,
+            "weightRangeTo": 15,
+            "trackInfo": null,
+            "flavours": null,
+            "active": null,
+            "createdAt": "2024-11-07T02:08:14.410000000Z",
+            "updatedAt": "2024-11-09T11:22:03.191000000Z"
+        },
+        {
+            "id": "0dac14d2-65a6-4c24-8b0b-b4d88f0c1b0d",
+            "code": "CT-02",
+            "name": "TRUFFLE FC",
+            "hasHalfKg": true,
+            "weightRangeFrom": 0.5,
+            "weightRangeTo": 15,
+            "trackInfo": null,
+            "flavours": null,
+            "active": null,
+            "createdAt": "2024-11-09T11:05:29.899000000Z",
+            "updatedAt": "2024-11-09T11:29:26.459000000Z"
+        },
+        {
+            "id": "c7d6acbb-182f-4945-bfa3-f37b1a1dfcdc",
+            "code": "CT-03",
+            "name": "NORMAL CAKE",
+            "hasHalfKg": true,
+            "weightRangeFrom": 0.5,
+            "weightRangeTo": 15,
+            "trackInfo": null,
+            "flavours": null,
+            "active": null,
+            "createdAt": "2024-11-15T15:10:41.525000000Z",
+            "updatedAt": "2024-11-15T15:10:41.525000000Z"
+        }
+    ]
+}

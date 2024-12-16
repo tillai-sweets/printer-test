@@ -1,0 +1,177 @@
+{
+    "branches": [
+        {
+            "id": "db49e4af-1f57-407c-9cf9-e37d3d0d0a9f",
+            "code": "BR-02",
+            "name": "New Tillai",
+            "shortName": "NA"
+        },
+        {
+            "id": "ce610362-ea9e-4e22-94b8-8f2a8abf27cd",
+            "code": "BR-01",
+            "name": "Old Tillai",
+            "shortName": "OA"
+        },
+        {
+            "id": "0701d5f1-a1fd-42c4-b647-7d534429d7fb",
+            "code": "BR-00",
+            "name": "ALL",
+            "shortName": "ALL"
+        }
+    ],
+    "flavours": [
+        {
+            "id": "8a186dc9-f5b5-4984-ba39-a2b08e0726f3",
+            "name": "Strawberry"
+          },
+          {
+            "id": "885b9cd1-c8a3-42ba-ba7e-5b1653f87c85",
+            "name": "Pista"
+          },
+          {
+            "id": "b4bb622f-e1ed-465d-b11e-354a81ea0157",
+            "name": "Pine Apple/Strawberry Combo"
+          },
+          {
+            "id": "b3d5df21-818b-4580-9b80-3c7cd0e3a331",
+            "name": "Butter Scotch"
+          },
+          {
+            "id": "916facae-197a-4591-aad7-afea090530ff",
+            "name": "Blueberry"
+          },
+          {
+            "id": "c1b9f0eb-3727-45fc-b756-4d2ceadd1725",
+            "name": "Vanilla"
+          },
+          {
+            "id": "1d0a068d-41ac-44a0-928c-81649b74c989",
+            "name": "No Flavour"
+          },
+          {
+            "id": "a18a0d2d-995b-49e3-8d75-5848790a1697",
+            "name": "Chocolate"
+          },
+          {
+            "id": "b0b6fa6f-1a69-4762-b5e0-3b376befc2e0",
+            "name": "Black Currant"
+          },
+          {
+            "id": "5240ec7c-a694-48e6-92ee-bc93f31a2d0c",
+            "name": "Pine Apple"
+          },
+          {
+            "id": "64f66c55-e164-415f-b2d0-245386b51acf",
+            "name": "Vanilla/Chocolate Combo"
+          }
+    ],
+    "categories": [
+        {
+            "id": "1a6268ea-14f7-46cb-8e0e-cc2661cbad5d",
+            "code": "CT-06",
+            "name": "Cheese Cake",
+            "hasHalfKg": false,
+            "weightRangeFrom": 1,
+            "weightRangeTo": 2
+        },
+        {
+            "id": "d563b290-153a-4887-baae-4c6af4098b17",
+            "code": "CT-05",
+            "name": "Butter Cake",
+            "hasHalfKg": false,
+            "weightRangeFrom": 1,
+            "weightRangeTo": 15
+        },
+        {
+            "id": "390de270-74ac-4e50-9623-dfab0e97877c",
+            "code": "CT-07",
+            "name": "Wedding Cake",
+            "hasHalfKg": false,
+            "weightRangeFrom": 1,
+            "weightRangeTo": 8
+        },
+        {
+            "id": "f94b6954-82b2-4079-a48c-081fea216693",
+            "code": "CT-01",
+            "name": "Fresh Cream Cake",
+            "hasHalfKg": true,
+            "weightRangeFrom": 0.5,
+            "weightRangeTo": 15
+        },
+        {
+            "id": "a933150e-2506-4f5c-8f4a-e01504aac34b",
+            "code": "CT-03",
+            "name": "Fountain Cake",
+            "hasHalfKg": false,
+            "weightRangeFrom": 1,
+            "weightRangeTo": 10
+        },
+        {
+            "id": "7dd2bca8-416e-406d-b6f1-4e3e645be2e1",
+            "code": "CT-04",
+            "name": "Customized Cake",
+            "hasHalfKg": false,
+            "weightRangeFrom": 1,
+            "weightRangeTo": 8
+        },
+        {
+            "id": "8d8774cc-940e-4bf2-89e7-d79abefdbbb7",
+            "code": "CT-02",
+            "name": "Premium Cake",
+            "hasHalfKg": false,
+            "weightRangeFrom": 1,
+            "weightRangeTo": 15
+        },
+        {
+            "id": "be1453c8-bc5c-4e20-ad61-a44e4271a2ea",
+            "code": "CT-08",
+            "name": "Occasional Cake",
+            "hasHalfKg": false,
+            "weightRangeFrom": 1,
+            "weightRangeTo": 15
+            
+        }
+    ],
+    "items": [
+        {
+            "code": "NAB-01",
+            "name": "Black Forest",
+            "hasHalfKg": true,
+            "halfKgPrice": 500,
+            "perKgPrice": 800,
+            "halfKgEgglessPrice": 400,
+            "perKgEgglessPrice": 750,
+            "itemCategoryId": "f94b6954-82b2-4079-a48c-081fea216693"
+        },
+        {
+            "code": "NAB-2",
+            "name": "Vanilla F/C",
+            "hasHalfKg": true,
+            "halfKgPrice": 450,
+            "perKgPrice": 750,
+            "halfKgEgglessPrice": 550,
+            "perKgEgglessPrice": 850,
+            "itemCategoryId": "f94b6954-82b2-4079-a48c-081fea216693"
+        },
+        {
+            "code": "NAB-3",
+            "name": "Strawberry F/C",
+            "hasHalfKg": true,
+            "halfKgPrice": 600,
+            "perKgPrice": 1000,
+            "halfKgEgglessPrice": 700,
+            "perKgEgglessPrice": 1100,
+            "itemCategoryId": "f94b6954-82b2-4079-a48c-081fea216693"
+        },
+        {
+            "code": "NAB-12",
+            "name": "Truffle",
+            "hasHalfKg": false,
+            "halfKgPrice": null,
+            "perKgPrice": 1200,
+            "halfKgEgglessPrice": null,
+            "perKgEgglessPrice": 1400,
+            "itemCategoryId": "8d8774cc-940e-4bf2-89e7-d79abefdbbb7"
+        }
+    ]
+}

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:testprint/network_printer.dart';
+import 'package:testprint/view/printer_test_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const PrinterTestScreen(),
     );
   }
 }
@@ -104,8 +106,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
                 onPressed: () async {
-                  var data = await _networkPrinter.testTicket();
-                  _networkPrinter.printTicket(data);
+                  // var data = await _networkPrinter.testTicket();
+                  // _networkPrinter.printTicket(data);
                 },
                 child: Text('Print'))
           ],

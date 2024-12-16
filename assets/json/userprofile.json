@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "id": "54a713bf-641d-4c26-b784-4593a8429062",
+            "name": "Rahul",
+            "employeeCode": "1001",
+            "email": "tillaibakeryandsweets+it@gmail.com",
+            "dialCode": "+91",
+            "phoneNumber": "6382463659",
+            "role": "ADMIN",
+            "userStatusType": "ACTIVE",
+            "branch": null,
+            "createdAt": "2024-11-09T11:47:26.247000000Z",
+            "updatedAt": "2024-11-09T11:48:42.116000000Z",
+            "userProfileBranchId": "9bd0a561-15ff-487a-961d-a017b5eb4b28"
+        },
+        {
+            "id": "7d96c597-e59d-4724-ad0a-d07a72b4712a",
+            "name": "Visal",
+            "employeeCode": "1000",
+            "email": "visal@xspine.in",
+            "dialCode": "+91",
+            "phoneNumber": "9605401172",
+            "role": "ADMIN",
+            "userStatusType": "ACTIVE",
+            "branch": null,
+            "createdAt": "2024-11-06T18:24:10.801000000Z",
+            "updatedAt": "2024-11-06T18:24:10.801000000Z",
+            "userProfileBranchId": "9bd0a561-15ff-487a-961d-a017b5eb4b28"
+        }
+    ]
+}

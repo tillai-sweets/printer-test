@@ -1,0 +1,64 @@
+{
+    "items": [
+        {
+            "id": "c02b482e-64f7-4ced-917c-5434fefbfcd0",
+            "year": 2024,
+            "day": "2024-11-11",
+            "amount": 3780,
+            "branch": null,
+            "createdAt": "2024-11-11T10:26:48.465000000Z",
+            "updatedAt": "2024-11-11T17:26:59.977000000Z",
+            "salesBranchId": "9bd0a561-15ff-487a-961d-a017b5eb4b28"
+        },
+        {
+            "id": "ea931f04-e3a6-435a-8468-9f284a729d19",
+            "year": 2024,
+            "day": "2024-11-12",
+            "amount": 15160,
+            "branch": null,
+            "createdAt": "2024-11-12T05:39:14.739000000Z",
+            "updatedAt": "2024-11-12T16:58:22.067000000Z",
+            "salesBranchId": "9bd0a561-15ff-487a-961d-a017b5eb4b28"
+        },
+        {
+            "id": "784b33d3-e772-4959-82ec-27988aaa8c19",
+            "year": 2024,
+            "day": "2024-11-09",
+            "amount": 2570,
+            "branch": null,
+            "createdAt": "2024-11-09T03:17:36.891000000Z",
+            "updatedAt": "2024-11-09T11:31:13.731000000Z",
+            "salesBranchId": "9bd0a561-15ff-487a-961d-a017b5eb4b28"
+        },
+        {
+            "id": "3b00d73f-7a39-4812-ac37-adb5ea0238ad",
+            "year": 2024,
+            "day": "2024-11-13",
+            "amount": 13880,
+            "branch": null,
+            "createdAt": "2024-11-13T02:52:10.189000000Z",
+            "updatedAt": "2024-11-14T06:08:17.810000000Z",
+            "salesBranchId": "9bd0a561-15ff-487a-961d-a017b5eb4b28"
+        },
+        {
+            "id": "042ad06e-fbf7-4172-bd29-5d911e6030b5",
+            "year": 2024,
+            "day": "2024-11-08",
+            "amount": 650,
+            "branch": null,
+            "createdAt": "2024-11-08T12:39:24.341000000Z",
+            "updatedAt": "2024-11-08T12:39:24.341000000Z",
+            "salesBranchId": "9bd0a561-15ff-487a-961d-a017b5eb4b28"
+        },
+        {
+            "id": "cf92258f-68c5-47f6-8f98-ac7f461a82b4",
+            "year": 2024,
+            "day": "2024-11-15",
+            "amount": 1100,
+            "branch": null,
+            "createdAt": "2024-11-15T14:18:59.162000000Z",
+            "updatedAt": "2024-11-15T14:23:36.116000000Z",
+            "salesBranchId": "9bd0a561-15ff-487a-961d-a017b5eb4b28"
+        }
+    ]
+}

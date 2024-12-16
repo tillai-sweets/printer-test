@@ -1,0 +1,119 @@
+{
+    "items": [
+        {
+            "id": "8b90a7d5-c654-4878-a912-cb54cbfdeb89",
+            "code": "BR-03",
+            "name": "TBS - 2",
+            "address": {
+                "building": "NO.3",
+                "adrressLine1": "M.G.ROAD",
+                "adrressLine2": "NEAR CLOCK TOWER, ABERDEEN BAZAAR, PORT BLAIR ",
+                "state": "Andaman & Nicobar Island",
+                "pincode": "744101",
+                "countryCode": "+91",
+                "country": "India"
+            },
+            "trackInfo": null,
+            "shortName": "TBS2",
+            "active": true,
+            "contactNo": "03192-238419",
+            "contactMobileNo": "+917695055266",
+            "representative": "MANIKANDAN",
+            "fssai": "12919101000247",
+            "createdAt": "2024-11-15T17:18:34.663000000Z",
+            "updatedAt": "2024-11-15T17:19:41.957000000Z"
+        },
+        {
+            "id": "7de35e1b-0868-4211-bb0b-051ac9dff62f",
+            "code": "BR-05",
+            "name": "TBS- 4",
+            "address": {
+                "building": "NO. 5 & 6",
+                "adrressLine1": "HOTEL ISLAND RESIDENCY BUILDING",
+                "adrressLine2": "BATHU BASTHI, PORT BLAIR ",
+                "state": "Andaman & Nicobar Island",
+                "pincode": "744105",
+                "countryCode": "+91",
+                "country": "India"
+            },
+            "trackInfo": null,
+            "shortName": "TBS4",
+            "active": true,
+            "contactNo": "03192-240965",
+            "contactMobileNo": "7695055299",
+            "representative": "VIJAY  M",
+            "fssai": "12922101000309",
+            "createdAt": "2024-11-15T17:25:35.047000000Z",
+            "updatedAt": "2024-11-15T17:25:35.047000000Z"
+        },
+        {
+            "id": "9bd0a561-15ff-487a-961d-a017b5eb4b28",
+            "code": "BR-01",
+            "name": "TBS -FACTORY",
+            "address": {
+                "building": "NO.3",
+                "adrressLine1": "ABERDEEN BAZAAR",
+                "adrressLine2": "BABU LANE, PORT BLAIR ",
+                "state": "Andaman & Nicobar Island",
+                "pincode": "744101",
+                "countryCode": "+91",
+                "country": "India"
+            },
+            "trackInfo": null,
+            "shortName": "TBSF",
+            "active": true,
+            "contactNo": "03192-230159",
+            "contactMobileNo": "+917695055122",
+            "representative": "PRAVEENA V",
+            "fssai": "12919101000247",
+            "createdAt": "2024-11-06T18:23:16.688000000Z",
+            "updatedAt": "2024-11-15T14:21:00.049000000Z"
+        },
+        {
+            "id": "20e9bef8-3135-49df-9c61-6fd813e5cff6",
+            "code": "BR-02",
+            "name": "TBS - 1",
+            "address": {
+                "building": "NO.4&5",
+                "adrressLine1": "MESHAK MARKET",
+                "adrressLine2": "OPP. STS BUS TERMINAL, ABERDEEN BAZAAR, PORT BLAIR ",
+                "state": "Andaman & Nicobar Island",
+                "pincode": "744101",
+                "countryCode": "+91",
+                "country": "India"
+            },
+            "trackInfo": null,
+            "shortName": "TBS1",
+            "active": true,
+            "contactNo": "03192-233589",
+            "contactMobileNo": "+917695055277",
+            "representative": "SURAJ SAHA",
+            "fssai": "22916111000009",
+            "createdAt": "2024-11-15T17:08:07.659000000Z",
+            "updatedAt": "2024-11-15T17:17:25.098000000Z"
+        },
+        {
+            "id": "98c124b3-8d1c-4d14-a16c-303855521827",
+            "code": "BR-04",
+            "name": "TBS- 3",
+            "address": {
+                "building": "NO.1,2,3&4",
+                "adrressLine1": "OPP. HEAD POST OFFICE",
+                "adrressLine2": "ABERDEEN BAZAAR, PORT BLAIR",
+                "state": "Andaman & Nicobar Island",
+                "pincode": "744101",
+                "countryCode": "+91",
+                "country": "India"
+            },
+            "trackInfo": null,
+            "shortName": "TBS3",
+            "active": true,
+            "contactNo": "03192-232339",
+            "contactMobileNo": "+91+917695055288",
+            "representative": "KABIL R",
+            "fssai": "12921101000089",
+            "createdAt": "2024-11-15T17:22:05.588000000Z",
+            "updatedAt": "2024-11-15T17:26:13.326000000Z"
+        }
+    ]
+}

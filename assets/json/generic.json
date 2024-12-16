@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "name": "Cerebral Palsy"
+    },
+    {
+      "id": 2,
+      "name": "Autism Spectrum Disorder"
+    },
+    {
+      
+      "code":"abc02",
+      "name": "Down Syndrome"
+    },
+    {
+      
+      "code":"abc01",
+      "name": "Blindness"
+    },
+    {
+      "id": 5,
+      "name": "Low Vision"
+    },
+    {
+      "id": 29,
+      "name": "Other"
+    }
+  ]
+  

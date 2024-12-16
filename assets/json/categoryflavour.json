@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "id": "f58c59ed-2fb2-4b29-9212-2a4130cb3696",
+            "flavour": null,
+            "category": null,
+            "createdAt": "2024-11-09T11:22:03.810000000Z",
+            "updatedAt": "2024-11-09T11:22:03.810000000Z"
+        },
+        {
+            "id": "d6fa281e-ad7f-4337-bf17-a11e21177995",
+            "flavour": null,
+            "category": null,
+            "createdAt": "2024-11-15T15:10:41.726000000Z",
+            "updatedAt": "2024-11-15T15:10:41.726000000Z"
+        },
+        {
+            "id": "316b268c-1c79-4200-8f32-543eff3a74d2",
+            "flavour": null,
+            "category": null,
+            "createdAt": "2024-11-09T11:29:27.643000000Z",
+            "updatedAt": "2024-11-09T11:29:27.643000000Z"
+        },
+        {
+            "id": "e812bdf1-92cf-4efe-b78d-b98e554beba2",
+            "flavour": null,
+            "category": null,
+            "createdAt": "2024-11-15T15:14:51.659000000Z",
+            "updatedAt": "2024-11-15T15:14:51.659000000Z"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "items": [
+        {
+            "id": "c5e7ae20-10de-486b-9b48-45025037e816",
+            "name": "Guest",
+            "phoneNumber": "+919605401172",
+            "dialCode": "+91",
+            "gst": "",
+            "buildingNo": "",
+            "addressLine1": "",
+            "addressLine2": "",
+            "state": "",
+            "countryCode": "India",
+            "country": "India",
+            "pincode": "",
+            "trackInfo": {
+                "createdBy": "Visal(1000)",
+                "createdOn": "2024-11-15T19:53:00.000000000Z",
+                "updatedBy": "Visal(1000)",
+                "updatedOn": "2024-11-15T19:53:00.000000000Z"
+            },
+            "active": null,
+            "createdAt": "2024-11-08T12:39:23.800000000Z",
+            "updatedAt": "2024-11-15T14:23:35.460000000Z"
+        }
+    ]
+}
