@@ -1,0 +1,61 @@
+{
+  "items": [
+    {
+      "__typename": "Category",
+      "weightRangeTo": 15,
+      "code": "CT-04",
+      "hasHalfKg": true,
+      "updatedAt": "2024-12-04T22:19:58.147Z",
+      "weightRangeFrom": 0.5,
+      "createdAt": "2024-11-16T09:19:12.791Z",
+      "id": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "name": "ICE-CAKE"
+    },
+    {
+      "__typename": "Category",
+      "weightRangeTo": 15,
+      "code": "CT-02",
+      "hasHalfKg": true,
+      "updatedAt": "2024-11-20T08:12:14.205Z",
+      "weightRangeFrom": 0.5,
+      "createdAt": "2024-11-16T09:19:13.037Z",
+      "id": "94e48309-2928-43cf-b21c-e7e5cbdb086d",
+      "name": "TRUFFLE"
+    },
+    {
+      "__typename": "Category",
+      "weightRangeTo": 15,
+      "code": "CT-01",
+      "active": null,
+      "hasHalfKg": true,
+      "updatedAt": "2024-11-16T09:19:12.897Z",
+      "weightRangeFrom": 0.5,
+      "createdAt": "2024-11-16T09:19:12.897Z",
+      "trackInfo": null,
+      "id": "2d4f33a5-069b-4978-81e9-9596a9a26fff",
+      "name": "FRESH FRUIT CAKE"
+    },
+    {
+      "__typename": "Category",
+      "weightRangeTo": 15,
+      "code": "CT-03",
+      "hasHalfKg": true,
+      "updatedAt": "2024-11-20T08:15:31.981Z",
+      "weightRangeFrom": 0.5,
+      "createdAt": "2024-11-16T09:19:13.157Z",
+      "id": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "name": "NORMAL CAKE"
+    },
+    {
+      "__typename": "Category",
+      "weightRangeTo": 15,
+      "code": "CT-05",
+      "hasHalfKg": true,
+      "updatedAt": "2024-11-20T08:12:42.321Z",
+      "weightRangeFrom": 0.5,
+      "createdAt": "2024-11-20T08:11:09.875Z",
+      "id": "f6eb097f-e116-489c-90c0-57f0adf16de4",
+      "name": "Special"
+    }
+  ]
+}

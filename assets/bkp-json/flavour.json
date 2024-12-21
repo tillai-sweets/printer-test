@@ -1,0 +1,128 @@
+{
+  "items": [
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:08:27.544Z",
+      "createdAt": "2024-11-18T14:08:27.544Z",
+      "trackInfo": null,
+      "id": "4a96053d-9a82-4458-b103-9fa3c74d8519",
+      "name": "ORANGE"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:08:18.418Z",
+      "createdAt": "2024-11-18T14:08:18.418Z",
+      "trackInfo": null,
+      "id": "39dbc432-b7b7-4ced-b851-2b09d538e74e",
+      "name": "MANGO"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:06:45.973Z",
+      "createdAt": "2024-11-18T14:06:45.973Z",
+      "trackInfo": null,
+      "id": "9f554d49-a592-4910-9ca7-e1991faa085d",
+      "name": "BLUE BERRY"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:07:17.929Z",
+      "createdAt": "2024-11-18T14:07:17.929Z",
+      "trackInfo": null,
+      "id": "0f8efa78-2cd4-436b-8152-11a9d5d742c0",
+      "name": "CHOCOLATE"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:07:57.387Z",
+      "createdAt": "2024-11-18T14:07:57.387Z",
+      "trackInfo": null,
+      "id": "4e6f73c3-d6aa-4c06-bd75-b8c492823a52",
+      "name": "BLACK FOREST"
+    },
+    {
+      "__typename": "Flavour",
+      "active": true,
+      "updatedAt": "2024-11-16T09:29:11.068Z",
+      "createdAt": "2024-11-16T09:29:11.068Z",
+      "trackInfo": null,
+      "id": "77e449a7-d3aa-414c-a21f-e1c174708565",
+      "name": "No Flavour"
+    },
+    {
+      "__typename": "Flavour",
+      "createdAt": "2024-11-20T08:07:45.306Z",
+      "id": "1fe34869-8fa1-4ffc-9aea-8b0c9c6cd424",
+      "name": "Choco Vannila",
+      "updatedAt": "2024-11-20T08:07:52.637Z"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:08:35.187Z",
+      "createdAt": "2024-11-18T14:08:35.187Z",
+      "trackInfo": null,
+      "id": "e8ccbca3-995a-4dbe-a540-41895cd90167",
+      "name": "PINEAPPLE"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:07:07.846Z",
+      "createdAt": "2024-11-18T14:07:07.846Z",
+      "trackInfo": null,
+      "id": "1adcf1d5-85e8-4b2c-a1b2-1df80b5d5101",
+      "name": "VANNILA"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:06:55.737Z",
+      "createdAt": "2024-11-18T14:06:55.737Z",
+      "trackInfo": null,
+      "id": "e2ac8d8a-1e3d-4849-a458-4ffeaf5f8255",
+      "name": "STRAWBERRY"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:08:08.823Z",
+      "createdAt": "2024-11-18T14:08:08.823Z",
+      "trackInfo": null,
+      "id": "0183a09a-862d-44c4-86d0-fb69427d2048",
+      "name": "WHITE FOREST"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:06:32.953Z",
+      "createdAt": "2024-11-18T14:06:32.953Z",
+      "trackInfo": null,
+      "id": "9b0d4624-19f2-4f2c-b316-f4d630aeae17",
+      "name": "BUTTER SCOTCH"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-20T08:08:01.659Z",
+      "createdAt": "2024-11-20T08:08:01.659Z",
+      "trackInfo": null,
+      "id": "ebe2a3ec-9a17-4cf7-9878-0645fd6b374c",
+      "name": "Choco Chips"
+    },
+    {
+      "__typename": "Flavour",
+      "active": null,
+      "updatedAt": "2024-11-18T14:07:44.271Z",
+      "createdAt": "2024-11-18T14:07:44.271Z",
+      "trackInfo": null,
+      "id": "873a532b-c2c2-4a29-9c27-483b7bd2baa8",
+      "name": "WHITE TRUFFLE"
+    }
+  ]
+}

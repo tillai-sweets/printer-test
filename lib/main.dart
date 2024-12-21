@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:testprint/network_printer.dart';
 import 'package:testprint/view/printer_test_screen.dart';
 
+import 'view/tillai_pdf_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PrinterTestScreen(),
+      home: TillaiPdfScreen(),
     );
   }
 }

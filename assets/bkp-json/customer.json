@@ -1,0 +1,172 @@
+{
+  "items": [
+    {
+      "__typename": "Customer",
+      "phoneNumber": "+919933123321",
+      "countryCode": "India",
+      "gst": "",
+      "pincode": "744101",
+      "createdAt": "2024-12-09T13:41:41.523Z",
+      "country": "India",
+      "name": "susmithasen",
+      "state": "",
+      "landmark": "landmark",
+      "buildingNo": "building no",
+      "updatedAt": "2024-12-12T06:51:52.660Z",
+      "addressLine2": "street address 2",
+      "addressLine1": "street address",
+      "id": "df6feb17-aef4-4de2-af11-73b1f1b9c01b",
+      "trackInfo": {
+        "updatedBy": "Visal(1000)",
+        "updatedOn": "2024-12-12T12:21:00.000000000Z",
+        "createdBy": "Visal(1000)",
+        "createdOn": "2024-12-12T12:21:00.000000000Z"
+      },
+      "dialCode": "+91"
+    },
+    {
+      "__typename": "Customer",
+      "phoneNumber": "+919933281748",
+      "countryCode": "India",
+      "gst": "",
+      "pincode": "744103",
+      "createdAt": "2024-11-30T10:12:02.900Z",
+      "country": "India",
+      "name": "Kumara velu",
+      "state": "",
+      "landmark": "Behind A3 theater",
+      "buildingNo": "No3",
+      "updatedAt": "2024-12-04T17:31:23.431Z",
+      "addressLine2": "",
+      "addressLine1": "School line",
+      "id": "a10eabb0-c0f0-471a-8d17-25b0efa8fabf",
+      "trackInfo": {
+        "updatedBy": "Visal(1000)",
+        "updatedOn": "2024-12-04T23:01:00.000000000Z",
+        "createdBy": "Visal(1000)",
+        "createdOn": "2024-12-04T23:01:00.000000000Z"
+      },
+      "dialCode": "+91"
+    },
+    {
+      "__typename": "Customer",
+      "phoneNumber": "+916382463659",
+      "countryCode": "India",
+      "gst": "",
+      "pincode": "744103",
+      "createdAt": "2024-11-18T14:30:31.175Z",
+      "country": "India",
+      "name": "RAHUL R A",
+      "state": "",
+      "landmark": "RAM MANDIR FOOT PATH",
+      "buildingNo": "Mrs Seena Kumari Illam",
+      "updatedAt": "2024-12-13T14:06:15.380Z",
+      "addressLine2": "Dairy Farm",
+      "addressLine1": "Behind Dairy Farm Govt. School",
+      "id": "d825774d-6e6d-428a-b2c4-d149cf02ce79",
+      "trackInfo": {
+        "updatedBy": "Visal(1000)",
+        "updatedOn": "2024-12-13T19:36:00.000000000Z",
+        "createdBy": "Visal(1000)",
+        "createdOn": "2024-12-13T19:36:00.000000000Z"
+      },
+      "dialCode": "+91"
+    },
+    {
+      "__typename": "Customer",
+      "phoneNumber": "+917695055266",
+      "countryCode": "India",
+      "gst": "",
+      "pincode": "",
+      "createdAt": "2024-12-04T22:28:05.217Z",
+      "country": "India",
+      "name": "TBS2",
+      "state": "",
+      "landmark": "",
+      "buildingNo": "",
+      "updatedAt": "2024-12-05T07:25:22.529Z",
+      "addressLine2": "",
+      "addressLine1": "",
+      "id": "2a0d7f5f-27d1-45ce-9284-0cf483313117",
+      "trackInfo": {
+        "updatedBy": "Rahul R A(1003)",
+        "updatedOn": "2024-12-05T12:55:00.000000000Z",
+        "createdBy": "Rahul R A(1003)",
+        "createdOn": "2024-12-05T12:55:00.000000000Z"
+      },
+      "dialCode": "+91"
+    },
+    {
+      "__typename": "Customer",
+      "phoneNumber": "+917695055288",
+      "countryCode": "India",
+      "gst": "",
+      "pincode": "744101",
+      "createdAt": "2024-12-16T05:50:44.728Z",
+      "country": "India",
+      "name": "TBS 3",
+      "state": "",
+      "landmark": "OPP.HEAD POST OFFICE",
+      "buildingNo": "",
+      "updatedAt": "2024-12-16T06:27:21.900Z",
+      "addressLine2": "",
+      "addressLine1": "",
+      "id": "936fee3e-c9bc-4175-ae7e-c04a76ea9d30",
+      "trackInfo": {
+        "updatedBy": "Rahul R A(1003)",
+        "updatedOn": "2024-12-16T11:57:00.000000000Z",
+        "createdBy": "Rahul R A(1003)",
+        "createdOn": "2024-12-16T11:57:00.000000000Z"
+      },
+      "dialCode": "+91"
+    },
+    {
+      "__typename": "Customer",
+      "phoneNumber": "+919933293338",
+      "countryCode": "India",
+      "gst": "",
+      "pincode": "",
+      "createdAt": "2024-11-16T10:19:02.538Z",
+      "country": "India",
+      "name": "Guest",
+      "state": "",
+      "landmark": "aberdeen bazar",
+      "buildingNo": "",
+      "updatedAt": "2024-12-04T17:31:07.189Z",
+      "addressLine2": "",
+      "addressLine1": "",
+      "id": "5f18c6b2-29fb-4f87-8e48-57aa66a4df66",
+      "trackInfo": {
+        "updatedBy": "Visal(1000)",
+        "updatedOn": "2024-12-04T23:01:00.000000000Z",
+        "createdBy": "Visal(1000)",
+        "createdOn": "2024-12-04T23:01:00.000000000Z"
+      },
+      "dialCode": "+91"
+    },
+    {
+      "__typename": "Customer",
+      "phoneNumber": "+919933288577",
+      "countryCode": "India",
+      "gst": "",
+      "pincode": "744101",
+      "createdAt": "2024-11-30T15:04:48.234Z",
+      "country": "India",
+      "name": "S PANDI DURAI",
+      "state": "",
+      "landmark": "OPP SBI INSURANCE",
+      "buildingNo": "",
+      "updatedAt": "2024-11-30T15:16:15.691Z",
+      "addressLine2": "",
+      "addressLine1": "M.A.ROAD , PHOENIX BAY",
+      "id": "551adbb9-022e-443e-b8b5-08819000e8c6",
+      "trackInfo": {
+        "updatedBy": "Rahul R A(1003)",
+        "updatedOn": "2024-11-30T20:46:00.000000000Z",
+        "createdBy": "Rahul R A(1003)",
+        "createdOn": "2024-11-30T20:46:00.000000000Z"
+      },
+      "dialCode": "+91"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "items": [
+    {
+      "__typename": "Branch",
+      "shortName": "TBS1",
+      "fssai": "22916111000009",
+      "representative": "SURAJ SAHA",
+      "contactNo": "03192-233589",
+      "createdAt": "2024-11-16T09:19:12.409Z",
+      "address": {
+        "pincode": "744101",
+        "country": "India",
+        "countryCode": "+91",
+        "adrressLine2": "OPP. STS BUS TERMINAL",
+        "adrressLine3": "ABERDEEN BAZAAR, PORT BLAIR",
+        "state": "Andaman & Nicobar Island",
+        "landmark": null,
+        "building": "NO.4&5",
+        "adrressLine1": "MESHAK MARKET"
+      },
+      "name": "TBS - 1",
+      "active": true,
+      "code": "BR-02",
+      "contactMobileNo": "+917695055277",
+      "updatedAt": "2024-12-15T17:47:57.993Z",
+      "id": "d529d881-c98b-4f7d-97be-e1d97f434ac8"
+    },
+    {
+      "__typename": "Branch",
+      "shortName": "TBSF",
+      "representative": "PRAVEENA V",
+      "fssai": "12919101000247",
+      "contactNo": "03192-230159",
+      "createdAt": "2024-11-16T09:19:12.249Z",
+      "address": {
+        "pincode": "744101",
+        "country": "India",
+        "countryCode": "+91",
+        "adrressLine2": "BABU LANE, PORT BLAIR ",
+        "state": "Andaman & Nicobar Island",
+        "building": "NO.3",
+        "adrressLine1": "ABERDEEN BAZAAR"
+      },
+      "name": "TBS -FACTORY",
+      "code": "BR-01",
+      "active": true,
+      "contactMobileNo": "+917695055122",
+      "updatedAt": "2024-11-16T09:19:12.249Z",
+      "trackInfo": null,
+      "id": "60299eb5-a80b-4005-8c7b-baf185acf2ce"
+    },
+    {
+      "__typename": "Branch",
+      "shortName": "TBS4",
+      "representative": "VIJAY  M",
+      "fssai": "12922101000309",
+      "contactNo": "03192-240965",
+      "createdAt": "2024-11-16T09:19:12.054Z",
+      "address": {
+        "pincode": "744105",
+        "country": "India",
+        "countryCode": "+91",
+        "adrressLine2": "BATHU BASTHI, PORT BLAIR ",
+        "state": "Andaman & Nicobar Island",
+        "building": "NO. 5 & 6",
+        "adrressLine1": "HOTEL ISLAND RESIDENCY BUILDING"
+      },
+      "name": "TBS- 4",
+      "code": "BR-05",
+      "active": true,
+      "contactMobileNo": "7695055299",
+      "updatedAt": "2024-11-16T09:19:12.054Z",
+      "trackInfo": null,
+      "id": "4b37d617-0d9d-4197-8a2b-aef7fd5c1f51"
+    },
+    {
+      "__typename": "Branch",
+      "shortName": "TBS2",
+      "representative": "MANIKANDAN",
+      "fssai": "12919101000247",
+      "contactNo": "03192-238419",
+      "createdAt": "2024-11-16T09:19:11.925Z",
+      "address": {
+        "pincode": "744101",
+        "country": "India",
+        "countryCode": "+91",
+        "adrressLine2": "NEAR CLOCK TOWER, ABERDEEN BAZAAR, PORT BLAIR ",
+        "state": "Andaman & Nicobar Island",
+        "building": "NO.3",
+        "adrressLine1": "M.G.ROAD"
+      },
+      "name": "TBS - 2",
+      "code": "BR-03",
+      "active": true,
+      "contactMobileNo": "+917695055266",
+      "updatedAt": "2024-11-16T09:19:11.925Z",
+      "trackInfo": null,
+      "id": "50feab74-33a1-43f3-8533-76378740022f"
+    },
+    {
+      "__typename": "Branch",
+      "shortName": "TBS3",
+      "representative": "KABIL R",
+      "fssai": "12921101000089",
+      "contactNo": "03192-232339",
+      "createdAt": "2024-11-16T09:19:12.623Z",
+      "address": {
+        "pincode": "744101",
+        "country": "India",
+        "countryCode": "+91",
+        "adrressLine2": "ABERDEEN BAZAAR, PORT BLAIR",
+        "state": "Andaman & Nicobar Island",
+        "building": "NO.1,2,3&4",
+        "adrressLine1": "OPP. HEAD POST OFFICE"
+      },
+      "name": "TBS- 3",
+      "code": "BR-04",
+      "active": true,
+      "contactMobileNo": "+91+917695055288",
+      "updatedAt": "2024-11-16T09:19:12.623Z",
+      "trackInfo": null,
+      "id": "6b2042e7-74d6-4bff-82d4-42245be74082"
+    }
+  ]
+}

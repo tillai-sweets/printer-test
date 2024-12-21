@@ -1,0 +1,212 @@
+{
+  "items": [
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:20:01.041Z",
+      "flavourId": "9b0d4624-19f2-4f2c-b316-f4d630aeae17",
+      "id": "8a30c733-b461-4e3d-ae4e-471cd47cc548",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:20:01.041Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:12:16.566Z",
+      "flavourId": "873a532b-c2c2-4a29-9c27-483b7bd2baa8",
+      "id": "010691ca-cab0-4da3-b89e-4963b93b9880",
+      "categoryId": "94e48309-2928-43cf-b21c-e7e5cbdb086d",
+      "updatedAt": "2024-11-20T08:12:16.566Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:19:59.771Z",
+      "flavourId": "39dbc432-b7b7-4ced-b851-2b09d538e74e",
+      "id": "5b9b0139-a0d6-4f6a-9ef8-fece7133c8ef",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:19:59.771Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:32.630Z",
+      "flavourId": "77e449a7-d3aa-414c-a21f-e1c174708565",
+      "id": "955d9b72-9ffa-406b-8473-11dc9ec8bac2",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:32.630Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:12:16.066Z",
+      "flavourId": "77e449a7-d3aa-414c-a21f-e1c174708565",
+      "id": "f05e99bb-6bf2-4d79-b44e-9e5a8fab0a71",
+      "categoryId": "94e48309-2928-43cf-b21c-e7e5cbdb086d",
+      "updatedAt": "2024-11-20T08:12:16.066Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:12:16.435Z",
+      "flavourId": "9f554d49-a592-4910-9ca7-e1991faa085d",
+      "id": "64f2ce44-1400-4b38-8b0a-387f6efd532d",
+      "categoryId": "94e48309-2928-43cf-b21c-e7e5cbdb086d",
+      "updatedAt": "2024-11-20T08:12:16.435Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:12:15.848Z",
+      "flavourId": "e2ac8d8a-1e3d-4849-a458-4ffeaf5f8255",
+      "id": "9d86b5a3-ccb1-4012-917c-6d87dc00e56b",
+      "categoryId": "94e48309-2928-43cf-b21c-e7e5cbdb086d",
+      "updatedAt": "2024-11-20T08:12:15.848Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:34.305Z",
+      "flavourId": "9b0d4624-19f2-4f2c-b316-f4d630aeae17",
+      "id": "43078f9d-2289-41ac-a09c-699d464c2dcb",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:34.305Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:34.164Z",
+      "flavourId": "e2ac8d8a-1e3d-4849-a458-4ffeaf5f8255",
+      "id": "32a68c84-31ff-4e89-98b6-9a5cec42b673",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:34.164Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:20:00.226Z",
+      "flavourId": "4e6f73c3-d6aa-4c06-bd75-b8c492823a52",
+      "id": "0f929529-181e-4b90-a1f9-20737c0b11a4",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:20:00.226Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:12:43.131Z",
+      "flavourId": "77e449a7-d3aa-414c-a21f-e1c174708565",
+      "id": "b7674534-971a-4950-a63c-fe438b2bed6e",
+      "categoryId": "f6eb097f-e116-489c-90c0-57f0adf16de4",
+      "updatedAt": "2024-11-20T08:12:43.131Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:20:01.177Z",
+      "flavourId": "4a96053d-9a82-4458-b103-9fa3c74d8519",
+      "id": "9f8f1fad-eb60-4d6b-8630-4ae85f1d0077",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:20:01.177Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:33.957Z",
+      "flavourId": "1adcf1d5-85e8-4b2c-a1b2-1df80b5d5101",
+      "id": "b6c013f2-ce18-48d7-8efa-12be0495d2b6",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:33.957Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:32.889Z",
+      "flavourId": "4a96053d-9a82-4458-b103-9fa3c74d8519",
+      "id": "9c3ed7c4-772c-438a-a35c-427249f5008f",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:32.889Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:20:00.766Z",
+      "flavourId": "1adcf1d5-85e8-4b2c-a1b2-1df80b5d5101",
+      "id": "4c53a753-d715-4a08-b6b5-69b1e362298f",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:20:00.766Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:33.563Z",
+      "flavourId": "39dbc432-b7b7-4ced-b851-2b09d538e74e",
+      "id": "b83077c6-7489-4b92-9823-05e03e26e4b5",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:33.563Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:19:59.580Z",
+      "flavourId": "77e449a7-d3aa-414c-a21f-e1c174708565",
+      "id": "3e5683e1-5a00-4413-9c1d-84bfa0bc0bcf",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:19:59.580Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-16T09:29:11.338Z",
+      "flavourId": "77e449a7-d3aa-414c-a21f-e1c174708565",
+      "id": "c8df9d0d-b622-44ea-b41c-e943a31a1d52",
+      "categoryId": "2d4f33a5-069b-4978-81e9-9596a9a26fff",
+      "updatedAt": "2024-11-16T09:29:11.338Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:33.765Z",
+      "flavourId": "e8ccbca3-995a-4dbe-a540-41895cd90167",
+      "id": "7bf325aa-4163-4aa2-83a5-193c3c69b805",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:33.765Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:20:00.390Z",
+      "flavourId": "9f554d49-a592-4910-9ca7-e1991faa085d",
+      "id": "7df5d3d9-12ee-4d48-b087-13849b9b746e",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:20:00.390Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:20:00.604Z",
+      "flavourId": "e8ccbca3-995a-4dbe-a540-41895cd90167",
+      "id": "bbbdc307-4a3f-455b-9d68-386888f1dabc",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:20:00.604Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:33.153Z",
+      "flavourId": "9f554d49-a592-4910-9ca7-e1991faa085d",
+      "id": "9b16d655-f62f-4e24-95e1-a3e834b182a6",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:33.153Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:12:16.271Z",
+      "flavourId": "39dbc432-b7b7-4ced-b851-2b09d538e74e",
+      "id": "bc76da64-a819-45b9-b9d6-f532139080bb",
+      "categoryId": "94e48309-2928-43cf-b21c-e7e5cbdb086d",
+      "updatedAt": "2024-11-20T08:12:16.271Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:19:59.988Z",
+      "flavourId": "0183a09a-862d-44c4-86d0-fb69427d2048",
+      "id": "b790a5dd-8b92-42a0-b098-4836de9acec7",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:19:59.988Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-12-04T22:20:00.926Z",
+      "flavourId": "e2ac8d8a-1e3d-4849-a458-4ffeaf5f8255",
+      "id": "6718f779-1111-49c7-8350-a0c0fb80cc15",
+      "categoryId": "c741199a-5dde-4853-adc6-a3657c771b7a",
+      "updatedAt": "2024-12-04T22:20:00.926Z"
+    },
+    {
+      "__typename": "CategoryFlavour",
+      "createdAt": "2024-11-20T08:15:33.403Z",
+      "flavourId": "0f8efa78-2cd4-436b-8152-11a9d5d742c0",
+      "id": "715a7a55-903b-47f7-a232-992e07adb0c2",
+      "categoryId": "1000ac83-7f31-49ac-9eec-762c8cd22827",
+      "updatedAt": "2024-11-20T08:15:33.403Z"
+    }
+  ]
+}

@@ -9,6 +9,50 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsBkpJsonGen {
+  const $AssetsBkpJsonGen();
+
+  /// File path: assets/bkp-json/addon-item.json
+  String get addonItem => 'assets/bkp-json/addon-item.json';
+
+  /// File path: assets/bkp-json/branch.json
+  String get branch => 'assets/bkp-json/branch.json';
+
+  /// File path: assets/bkp-json/category-flavour.json
+  String get categoryFlavour => 'assets/bkp-json/category-flavour.json';
+
+  /// File path: assets/bkp-json/category.json
+  String get category => 'assets/bkp-json/category.json';
+
+  /// File path: assets/bkp-json/customer.json
+  String get customer => 'assets/bkp-json/customer.json';
+
+  /// File path: assets/bkp-json/flavour.json
+  String get flavour => 'assets/bkp-json/flavour.json';
+
+  /// File path: assets/bkp-json/item.json
+  String get item => 'assets/bkp-json/item.json';
+
+  /// File path: assets/bkp-json/order-det.json
+  String get orderDet => 'assets/bkp-json/order-det.json';
+
+  /// File path: assets/bkp-json/order.json
+  String get order => 'assets/bkp-json/order.json';
+
+  /// List of all assets
+  List<String> get values => [
+        addonItem,
+        branch,
+        categoryFlavour,
+        category,
+        customer,
+        flavour,
+        item,
+        orderDet,
+        order
+      ];
+}
+
 class $AssetsGifGen {
   const $AssetsGifGen();
 
@@ -295,6 +339,7 @@ class $AssetsJsonGen {
 class Assets {
   Assets._();
 
+  static const $AssetsBkpJsonGen bkpJson = $AssetsBkpJsonGen();
   static const $AssetsGifGen gif = $AssetsGifGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
