@@ -130,7 +130,7 @@ class GeneratePdf {
           Assets.bkpJson.category, (json) => local.Category.fromJson(json));
   Future<List<Customer>> _fetchCustomer() async =>
       await _fetchTypeData<Customer>(
-          Assets.bkpJson.category, (json) => Customer.fromJson(json));
+          Assets.bkpJson.customer, (json) => Customer.fromJson(json));
   Future<List<Flavour>> _fetchFlavour() async => await _fetchTypeData<Flavour>(
       Assets.bkpJson.flavour, (json) => Flavour.fromJson(json));
   Future<List<Order>> _fetchOrder() async => await _fetchTypeData<Order>(
@@ -168,7 +168,7 @@ class GeneratePdf {
       await _fetchData();
       Customer? customer = await getItemFromListFuture(
           list: customers, id: order.orderCustomerId!);
-      customer ??= customers.first;
+      customer ??= customers[1];
       List<InvoiceItem> invoiceItems = [];
 
       int totalNormalCupCakes = 0;

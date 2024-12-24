@@ -20,20 +20,20 @@ pw.Column _headerSection({
         height: 65,
         fit: pw.BoxFit.contain,
       ),
-      ...invoice.shopAdrress.map((line) => _text(line, fontSize: 8)),
-      pw.Align(
-        alignment: pw.Alignment.center,
-        child: _text('GSTIN : ${invoice.gstIn ?? ''}', fontSize: 8),
-      ),
-      pw.Row(mainAxisAlignment: pw.MainAxisAlignment.center, children: [
-        pw.Image(
-          pw.MemoryImage(fssaiBytes),
-          width: 22,
-          height: 22,
-        ),
-        pw.SizedBox(width: 2),
-        _text(invoice.fssaiNo ?? '', fontSize: 8),
-      ])
+      // ...invoice.shopAdrress.map((line) => _text(line, fontSize: 8)),
+      // pw.Align(
+      //   alignment: pw.Alignment.center,
+      //   child: _text('GSTIN : ${invoice.gstIn ?? ''}', fontSize: 8),
+      // ),
+      // pw.Row(mainAxisAlignment: pw.MainAxisAlignment.center, children: [
+      //   pw.Image(
+      //     pw.MemoryImage(fssaiBytes),
+      //     width: 22,
+      //     height: 22,
+      //   ),
+      //   pw.SizedBox(width: 2),
+      //   _text(invoice.fssaiNo ?? '', fontSize: 8),
+      // ])
       // pw.Row(
       //   mainAxisSize: pw.MainAxisSize.max,
       //   children: [
