@@ -186,6 +186,22 @@ class $AssetsImagesGen {
   /// File path: assets/images/FSSAI.png
   AssetGenImage get fssai => const AssetGenImage('assets/images/FSSAI.png');
 
+  /// File path: assets/images/TILLAIS LOGO HEADER FACTORY.png
+  AssetGenImage get tillaisLogoHeaderFactory =>
+      const AssetGenImage('assets/images/TILLAIS LOGO HEADER FACTORY.png');
+
+  /// File path: assets/images/TILLAIS LOGO HEADER TBS-1.png
+  AssetGenImage get tillaisLogoHeaderTbs1 =>
+      const AssetGenImage('assets/images/TILLAIS LOGO HEADER TBS-1.png');
+
+  /// File path: assets/images/TILLAIS LOGO HEADER TBS-3.png
+  AssetGenImage get tillaisLogoHeaderTbs3 =>
+      const AssetGenImage('assets/images/TILLAIS LOGO HEADER TBS-3.png');
+
+  /// File path: assets/images/TILLAIS LOGO HEADER TBS-4.png
+  AssetGenImage get tillaisLogoHeaderTbs4 =>
+      const AssetGenImage('assets/images/TILLAIS LOGO HEADER TBS-4.png');
+
   /// File path: assets/images/img_background.png
   AssetGenImage get imgBackground =>
       const AssetGenImage('assets/images/img_background.png');
@@ -201,6 +217,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/order-placed-photo.png
   AssetGenImage get orderPlacedPhoto =>
       const AssetGenImage('assets/images/order-placed-photo.png');
+
+  /// File path: assets/images/pos-footer.jpeg
+  AssetGenImage get posFooter =>
+      const AssetGenImage('assets/images/pos-footer.jpeg');
 
   /// File path: assets/images/rupee-bold.png
   AssetGenImage get rupeeBold =>
@@ -240,10 +260,15 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         fssai,
+        tillaisLogoHeaderFactory,
+        tillaisLogoHeaderTbs1,
+        tillaisLogoHeaderTbs3,
+        tillaisLogoHeaderTbs4,
         imgBackground,
         loginBg,
         noImage,
         orderPlacedPhoto,
+        posFooter,
         rupeeBold,
         rupeeWhiteBold,
         rupeeWhite,

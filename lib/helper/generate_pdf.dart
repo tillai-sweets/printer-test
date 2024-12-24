@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/services.dart';
-import 'package:testprint/helper/pos_printer_invoice.dart';
+import 'package:testprint/helper/pos_non_web_invoice.dart';
 import 'package:testprint/models/ModelProvider.dart';
 
 import '../gen/assets.gen.dart';
@@ -57,12 +57,18 @@ class GeneratePdf {
     InvoiceModel? invoice =
         await _getInvoiceModel(order, branch: branch, posInvoice: posInvoice);
     inspect(invoice);
+
     if (invoice != null) {
+      logoBytes = await _loadImageFromAssets(
+          Util.loadBranchLogoBytesPath(branch, posInvoice));
+      Uint8List footerBytes =
+          await _loadImageFromAssets(Assets.images.posFooter.path);
       var pdf = await generatePosPrinterInvoiceView(
         invoice: invoice,
         logoBytes: logoBytes!,
         fssaiBytes: fssaiBytes!,
-        addOnItems: addOnItems ?? [],
+        addOnItems: addOnItems,
+        footerBytes: footerBytes,
       );
 
       return pdf;
@@ -161,7 +167,7 @@ class GeneratePdf {
     if (order != null) {
       await _fetchData();
       Customer? customer = await getItemFromListFuture(
-          list: customers!, id: order.orderCustomerId!);
+          list: customers, id: order.orderCustomerId!);
       customer ??= customers.first;
       List<InvoiceItem> invoiceItems = [];
 

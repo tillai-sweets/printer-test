@@ -1,5 +1,8 @@
 import 'package:flutter/services.dart';
 
+import '../gen/assets.gen.dart';
+import '../models/ModelProvider.dart';
+
 class Util {
   static String toTitleCase(String text) {
     if (text.isEmpty) {
@@ -134,5 +137,33 @@ class Util {
     );
 
     return ipRegex.hasMatch(ipAddress);
+  }
+
+  static String loadBranchLogoBytesPath(Branch? branch, bool posImage) {
+    if (branch != null && posImage) {
+      switch (branch.shortName) {
+        case 'TBS1':
+          return Assets.images.tillaisLogoHeaderTbs1.path;
+        case 'TBS2':
+          return Assets.images.tillaisLogoHeaderFactory.path;
+        case 'TBS3':
+          return Assets.images.tillaisLogoHeaderTbs3.path;
+        case 'TBS4':
+          return Assets.images.tillaisLogoHeaderTbs4.path;
+        case 'TBSF':
+          return Assets.images.tillaisLogoHeaderFactory.path;
+        default:
+          return Assets.images.tillaiLogo.path;
+      }
+    } else {
+      return Assets.images.tillaiLogo.path;
+    }
+  }
+
+  static String removeLeadingComma(String input) {
+    if (input.trim().startsWith(',')) {
+      return input.substring(1).trim();
+    }
+    return input;
   }
 }

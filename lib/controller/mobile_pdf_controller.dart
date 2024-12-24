@@ -120,7 +120,9 @@ class MobilePdfController extends GetxController {
     if (orders.isNotEmpty) {
       Order order = orders.first;
       List<OrderDetail> ods = _getOrderDetails(order);
-      Branch branch = branches.first;
+
+      Branch branch =
+          await getItemFromListFuture(list: branches, id: order.orderBranchId!);
       selectedBranch = branch;
       order = order.copyWith(orderDetails: ods);
       selectedOrder = order;
@@ -146,6 +148,19 @@ class MobilePdfController extends GetxController {
     return true;
   }
 
+  Future<T?> getItemFromListFuture<T>(
+      {required List<dynamic> list, required String id}) async {
+    if (!_isListNullOrEmpty(list)) {
+      for (var element in list) {
+        if (element.id == id.trim()) {
+          return element;
+        }
+      }
+    }
+    return null;
+  }
+
+  bool _isListNullOrEmpty(List<dynamic>? list) => list == null || list.isEmpty;
   Future<List<Branch>> _fetchBranch() async => await _fetchTypeData<Branch>(
       Assets.bkpJson.branch, (json) => Branch.fromJson(json));
   List<OrderDetail> _getOrderDetails(Order order) {

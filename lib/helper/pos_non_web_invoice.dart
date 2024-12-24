@@ -1,159 +1,386 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_esc_pos_utils/flutter_esc_pos_utils.dart';
+import 'package:image/image.dart' as img;
+import 'package:testprint/helper/util.dart';
 
+import '../../gen/assets.gen.dart';
+import '../../model/new_order_model.dart';
 import '../../models/ModelProvider.dart';
-import '../model/new_order_model.dart';
-import 'util.dart';
 
-Future<List<int>> generateNonWebPosInvoiceView({
+Future<List<int>> generatePosPrinterInvoiceView({
   required InvoiceModel invoice,
+  required Uint8List logoBytes,
+  required Uint8List footerBytes,
+  required Uint8List fssaiBytes,
   required List<AddOnItem> addOnItems,
-}) async {
-  return await _generateNonWebPosInvoice(
-    shopName: 'Tillai Bakery and Sweets',
-    shopAddress: invoice.shopAdrress,
-    gstin: invoice.gstIn ?? '',
-    fssai: invoice.fssaiNo ?? '',
-    items: _convertItemsToPrintableFormat(invoice.items, addOnItems),
-    totalAmount: double.parse(invoice.totalAmt),
-    tax: double.parse(invoice.taxAmt),
-    discount: double.parse(invoice.disount),
-    grandTotal: double.parse(invoice.totalPayable),
-    advancePaid: double.parse(invoice.advanceAmt),
-    balanceDue: double.parse(invoice.dueAmt),
-    orderNo: invoice.orderNo,
-    deliveryDate: invoice.deliveryDateTimeStr,
-    customerName: Util.toTitleCase(invoice.customer.name ?? ''),
-    customerPhone: invoice.customer.phoneNumber ?? '',
-    customerAddress: _getCustomerAddress(invoice.customer),
-    date: invoice.date,
-    time: invoice.time,
-  );
-}
-
-Future<List<int>> _generateNonWebPosInvoice({
-  required String shopName,
-  required List<String> shopAddress,
-  required String gstin,
-  required String fssai,
-  required List<Map<String, String>> items,
-  required double totalAmount,
-  required double tax,
-  required double discount,
-  required double grandTotal,
-  required double advancePaid,
-  required double balanceDue,
-  required String orderNo,
-  required String deliveryDate,
-  required String customerName,
-  required String customerPhone,
-  required String customerAddress,
-  required String date,
-  required String time,
 }) async {
   final profile = await CapabilityProfile.load();
   final generator = Generator(PaperSize.mm80, profile);
   List<int> bytes = [];
 
-  // Header Section
-  bytes += generator.text(
-    shopName,
-    styles: const PosStyles(
-      align: PosAlign.center,
-      bold: true,
-      height: PosTextSize.size2,
-    ),
-    linesAfter: 1,
-  );
-  for (String line in shopAddress) {
-    bytes +=
-        generator.text(line, styles: const PosStyles(align: PosAlign.center));
-  }
-  bytes += generator.text('GSTIN: $gstin',
-      styles: const PosStyles(align: PosAlign.center));
-  bytes += generator.text('FSSAI: $fssai',
-      styles: const PosStyles(align: PosAlign.center));
-  bytes += generator.feed(1);
+  // Add header logo
+  bytes += _generateLogo(generator: generator, logoBytes: logoBytes);
 
-  // Invoice Details Section
-  bytes += generator.text(
-    'Invoice Details',
-    styles: const PosStyles(align: PosAlign.left, bold: true, underline: true),
-  );
-  bytes += generator.text('Order No: $orderNo');
-  bytes += generator.text('Date: $date $time');
-  bytes += generator.text('Delivery Date: $deliveryDate', linesAfter: 1);
-
-  // Customer Details Section
-  bytes += generator.text(
-    'Customer Details',
-    styles: const PosStyles(align: PosAlign.left, bold: true, underline: true),
-  );
-  bytes += generator.text('Name: $customerName');
-  bytes += generator.text('Phone: $customerPhone');
-  bytes += generator.text('Address: $customerAddress', linesAfter: 1);
-
-  // Items Table Header
+  // Add invoice details
+  bytes += generator.feed(1); // Space
   bytes += generator.row([
-    PosColumn(text: 'Item', width: 6, styles: const PosStyles(bold: true)),
-    PosColumn(text: 'Qty', width: 2, styles: const PosStyles(bold: true)),
-    PosColumn(text: 'Price', width: 2, styles: const PosStyles(bold: true)),
-    PosColumn(text: 'Total', width: 2, styles: const PosStyles(bold: true)),
+    PosColumn(
+        text: 'Invoice Details', width: 6, styles: const PosStyles(bold: true)),
+    PosColumn(text: '', width: 1),
+    PosColumn(
+        text: 'Invoice To', width: 5, styles: const PosStyles(bold: true)),
   ]);
+  bytes += generator.row([
+    PosColumn(
+        text: 'Order No: ${invoice.orderNo}',
+        width: 6,
+        styles: const PosStyles(bold: false)),
+    PosColumn(text: '', width: 1),
+    PosColumn(
+        text: invoice.customer.name ?? '',
+        width: 5,
+        styles: const PosStyles(bold: false)),
+  ]);
+  bytes += generator.row([
+    PosColumn(
+        text: 'OFN     : ${invoice.orderFormNumber ?? ''}',
+        width: 6,
+        styles: const PosStyles(bold: false)),
+    PosColumn(text: '', width: 1),
+    PosColumn(
+        text: invoice.customer.phoneNumber ?? '',
+        width: 5,
+        styles: const PosStyles(bold: false)),
+  ]);
+  bytes += _generateKeyValuePair(
+      generator, 'Date    :', '${invoice.date} ${invoice.time}');
+  bytes += _generateKeyValuePair(
+      generator, 'Delivery:', invoice.deliveryDateTimeStr,
+      bold: true);
+  bytes += _generateKeyValuePair(generator, 'Address : ',
+      Util.removeLeadingComma(_getCustomerAddress(invoice.customer)));
 
-  // Items Data
-  for (Map<String, String> item in items) {
-    bytes += generator.row([
-      PosColumn(text: item['name'] ?? '', width: 6),
-      PosColumn(text: item['qty'] ?? '', width: 2),
-      PosColumn(text: item['price'] ?? '', width: 2),
-      PosColumn(text: item['total'] ?? '', width: 2),
-    ]);
+  // Add items table
+  bytes += generator.feed(1); // Space
+  bytes += _generateItemsTable(generator, invoice, fontSize: 0.8);
+
+  // // Add totals
+  // bytes += generator.feed(1); // Space
+  // bytes += _generateKeyValuePair(
+  //     generator, 'Discount:', _withRupee(invoice.disount),
+  //     align: PosAlign.right, fontSize: 0.9);
+  // bytes += _generateKeyValuePair(
+  //     generator, 'Grand Total:', _withRupee(invoice.totalPayable),
+  //     align: PosAlign.right, fontSize: 1.2, bold: true);
+  // bytes += _generateKeyValuePair(
+  //     generator, 'Advance:', _withRupee(invoice.advanceAmt),
+  //     align: PosAlign.right, fontSize: 0.9);
+  // bytes += _generateKeyValuePair(generator, 'Due:', _withRupee(invoice.dueAmt),
+  //     align: PosAlign.right, fontSize: 2, bold: true, linesAfter: 1);
+
+  // Add GST details
+  bytes += generator.feed(1); // Space
+  // bytes += _generateSectionHeader(generator, 'GST Details:');
+  // bytes += _generateGSTDetails(generator, invoice, fontSize: 0.8);
+  bytes += _generateGSTAndAmtDetails(generator, invoice);
+
+  // Add footer
+  bytes += generator.feed(1); // Space
+  var footerImage = await _image(
+      generator: generator,
+      imagePath: Assets.images.posFooter.path,
+      width: 384);
+  if (footerImage != null) {
+    bytes += footerImage;
   }
   bytes += generator.feed(1);
-
-  // Totals Section
-  bytes += generator.text('Subtotal: ${totalAmount.toStringAsFixed(2)}',
-      styles: const PosStyles(align: PosAlign.right));
-  bytes += generator.text('Tax: ${tax.toStringAsFixed(2)}',
-      styles: const PosStyles(align: PosAlign.right));
-  bytes += generator.text('Discount: ${discount.toStringAsFixed(2)}',
-      styles: const PosStyles(align: PosAlign.right));
-  bytes += generator.text(
-    'Grand Total: ${grandTotal.toStringAsFixed(2)}',
-    styles: const PosStyles(align: PosAlign.right, bold: true),
-  );
-  bytes += generator.feed(1);
-
-  // Payment Section
-  bytes += generator.text('Advance Paid: ${advancePaid.toStringAsFixed(2)}',
-      styles: const PosStyles(align: PosAlign.right));
-  bytes += generator.text(
-    'Balance Due: ${balanceDue.toStringAsFixed(2)}',
-    styles: const PosStyles(align: PosAlign.right, bold: true),
-  );
-  bytes += generator.feed(1);
-
-  // Footer
-  bytes += generator.text(
-    '** Taste the Best! **',
-    styles:
-        const PosStyles(align: PosAlign.center, bold: true, underline: true),
-  );
+  bytes += _generateText(generator, '***** Thank You, Visit Again *****',
+      align: PosAlign.center);
+  bytes += generator.feed(2);
   bytes += generator.cut();
-
   return bytes;
 }
 
-List<Map<String, String>> _convertItemsToPrintableFormat(
-    List<InvoiceItem> items, List<AddOnItem> addOnItems) {
-  return items.map((item) {
-    return {
-      'name': item.name,
-      'qty': item.qty,
-      'price': item.rate,
-      'total': item.price,
-    };
-  }).toList();
+Future<List<int>?>? _image(
+    {required Generator generator,
+    required String imagePath,
+    int? width}) async {
+  // Load the image from assets
+  final ByteData data = await rootBundle.load(imagePath);
+  final Uint8List imgBytes = data.buffer.asUint8List();
+  // Decode the image using the `image` package
+  final img.Image? decodedImage = img.decodeImage(imgBytes);
+
+  if (decodedImage != null) {
+    // Convert the image to raster format for ESC/POS printers
+    final img.Image resizedImage = img.copyResize(decodedImage,
+        width: width ?? 384); // Resize for 80mm printer width
+    return generator.imageRaster(
+      resizedImage,
+      align: PosAlign.center,
+    );
+  }
+  return null;
+}
+
+List<int> _generateLogo({
+  required Generator generator,
+  required Uint8List logoBytes,
+  int? width,
+}) {
+  final img.Image? decodedImage = img.decodeImage(logoBytes);
+  if (decodedImage != null) {
+    // Resize the image while maintaining aspect ratio
+    final img.Image resizedImage = img.copyResize(
+      decodedImage,
+      width: width ?? 576, // Default to full paper width
+    );
+
+    // Convert the image to a supported format (e.g., grayscale)
+    final img.Image formattedImage = img.grayscale(resizedImage);
+
+    // Return the rasterized image bytes
+    return generator.imageRaster(formattedImage, align: PosAlign.center);
+  }
+  return [];
+}
+
+List<int> _generateLogoOld(
+    {required Generator generator, required Uint8List logoBytes, int? width}) {
+  final img.Image? decodedImage = img.decodeImage(logoBytes);
+  if (decodedImage != null) {
+    final img.Image resizedImage =
+        img.copyResize(decodedImage, width: width ?? 576); // Fit to paper width
+    return generator.imageRaster(resizedImage, align: PosAlign.center);
+  }
+  return [];
+}
+
+List<int> _generateSectionHeader(Generator generator, String text,
+    {int? linesAfter}) {
+  return _generateText(generator, text,
+      fontSize: 1.2, bold: true, underline: true, linesAfter: linesAfter ?? 0);
+}
+
+List<int> _generateKeyValuePair(
+  Generator generator,
+  String key,
+  String value, {
+  PosAlign align = PosAlign.left,
+  double fontSize = 1.0,
+  bool bold = false,
+  int linesAfter = 0,
+}) {
+  return _generateText(generator, '$key $value',
+      fontSize: fontSize, bold: bold, align: align, linesAfter: linesAfter);
+}
+
+List<int> _generateItemsTable(Generator generator, InvoiceModel invoice,
+    {double fontSize = 1.0}) {
+  List<InvoiceItem> items = invoice.items;
+  List<int> bytes = [];
+  bytes += generator.row([
+    PosColumn(
+        text: 'Item',
+        width: 7,
+        styles: const PosStyles(bold: true, align: PosAlign.left)),
+    PosColumn(
+        text: 'Qty',
+        width: 1,
+        styles: const PosStyles(bold: true, align: PosAlign.right)),
+    PosColumn(
+        text: 'Price',
+        width: 2,
+        styles: const PosStyles(bold: true, align: PosAlign.right)),
+    PosColumn(
+        text: 'Total',
+        width: 2,
+        styles: const PosStyles(bold: true, align: PosAlign.right)),
+  ]);
+  bytes += generator.row([
+    PosColumn(text: '', width: 7, styles: const PosStyles(bold: true)),
+    PosColumn(text: '', width: 1, styles: const PosStyles(bold: true)),
+    PosColumn(text: '', width: 1, styles: const PosStyles(bold: true)),
+    PosColumn(
+        text: '(Incl Tax)',
+        width: 3,
+        styles: const PosStyles(
+            bold: false, align: PosAlign.right, fontType: PosFontType.fontB)),
+  ]);
+  for (InvoiceItem item in items) {
+    bytes += generator.row([
+      PosColumn(
+        text: Util.toTitleCase(_getItemDescription(item)),
+        width: 7,
+        styles: const PosStyles(align: PosAlign.left),
+      ),
+      PosColumn(
+        text: item.qty,
+        width: 1,
+        styles: const PosStyles(align: PosAlign.right),
+      ),
+      PosColumn(
+        text:
+            item.isAddOnItem ? (item.weightStr == '-' ? '-' : item.price) : '-',
+        width: 2,
+        styles: const PosStyles(align: PosAlign.right),
+      ),
+      PosColumn(
+        text: item.price,
+        width: 2,
+        styles: const PosStyles(align: PosAlign.right),
+      ),
+    ]);
+    if (!_isStringNullOrEmpty(item.customerMessage)) {
+      bytes += generator.row([
+        PosColumn(
+          text: '(${item.customerMessage})',
+          width: 7,
+          styles: const PosStyles(bold: true, align: PosAlign.left),
+        ),
+        PosColumn(
+          text: '',
+          width: 1,
+        ),
+        PosColumn(
+          text: '',
+          width: 2,
+        ),
+        PosColumn(
+          text: '',
+          width: 2,
+        ),
+      ]);
+    }
+  }
+  bytes += generator.row([
+    PosColumn(text: '', width: 8, styles: const PosStyles(bold: true)),
+    PosColumn(
+        text: 'Total',
+        width: 2,
+        styles: const PosStyles(bold: true, align: PosAlign.right)),
+    PosColumn(
+        text: invoice.totalAmt,
+        width: 2,
+        styles: const PosStyles(bold: false, align: PosAlign.right)),
+  ]);
+
+  // bytes += _generateKeyValuePair(generator, 'Total     :', invoice.totalAmt);
+  return bytes;
+}
+
+List<int> _generateGSTDetails(Generator generator, InvoiceModel invoice,
+    {double fontSize = 0.8}) {
+  // return generator.row([
+  //   PosColumn(text: ' GST %     : 18%', width: 3),
+  //   PosColumn(text: ' CGST      : ${_withRupee(invoice.cgstAmt)}', width: 3),
+  //   PosColumn(text: ' UTGST     : ${_withRupee(invoice.utstAmt)}', width: 3),
+  //   PosColumn(text: ' Total Tax : ${_withRupee(invoice.taxAmt)}', width: 3),
+  // ]);
+  List<int> bytes = [];
+  bytes += _generateText(generator, ' GST %     : 18%');
+  bytes +=
+      _generateText(generator, ' CGST      : ${_withRupee(invoice.cgstAmt)}');
+  bytes +=
+      _generateText(generator, ' UTGST     : ${_withRupee(invoice.utstAmt)}');
+  bytes +=
+      _generateText(generator, ' Total Tax : ${_withRupee(invoice.taxAmt)}');
+  return bytes;
+}
+
+List<int> _generateGSTAndAmtDetails(
+  Generator generator,
+  InvoiceModel invoice,
+) {
+  List<int> bytes = [];
+  bytes += generator.row([
+    PosColumn(
+        text: 'GST Details:', width: 6, styles: const PosStyles(bold: true)),
+    PosColumn(text: '', width: 1),
+    PosColumn(text: '', width: 5, styles: const PosStyles(bold: true)),
+  ]);
+  bytes += generator.row([
+    PosColumn(
+        text: 'GST %', width: 3, styles: const PosStyles(align: PosAlign.left)),
+    PosColumn(text: ':', width: 1),
+    PosColumn(
+        text: '18%', width: 3, styles: const PosStyles(align: PosAlign.left)),
+    PosColumn(text: '', width: 5, styles: const PosStyles(bold: true)),
+  ]);
+  bytes += generator.row([
+    PosColumn(
+        text: 'CGST', width: 3, styles: const PosStyles(align: PosAlign.left)),
+    PosColumn(text: ':', width: 1),
+    PosColumn(
+        text: _withRupee(invoice.cgstAmt),
+        width: 3,
+        styles: const PosStyles(align: PosAlign.left)),
+    PosColumn(
+        text: 'Discount: ${_withRupee(invoice.disount)}',
+        width: 5,
+        styles: const PosStyles(align: PosAlign.right)),
+  ]);
+  bytes += generator.row([
+    PosColumn(
+        text: 'UTGST', width: 3, styles: const PosStyles(align: PosAlign.left)),
+    PosColumn(text: ':', width: 1),
+    PosColumn(
+        text: _withRupee(invoice.utstAmt),
+        width: 3,
+        styles: const PosStyles(align: PosAlign.left)),
+    PosColumn(
+        text: 'Grand Total: ${_withRupee(invoice.totalPayable)}',
+        width: 5,
+        styles: const PosStyles(align: PosAlign.right, bold: true)),
+  ]);
+  bytes += generator.row([
+    PosColumn(
+        text: 'Total Tax',
+        width: 3,
+        styles: const PosStyles(align: PosAlign.left)),
+    PosColumn(text: ':', width: 1),
+    PosColumn(
+        text: _withRupee(invoice.taxAmt),
+        width: 3,
+        styles: const PosStyles(align: PosAlign.left)),
+    PosColumn(
+        text: 'Advance: ${_withRupee(invoice.advanceAmt)}',
+        width: 5,
+        styles: const PosStyles(
+          align: PosAlign.right,
+        )),
+  ]);
+  bytes += _generateKeyValuePair(generator, 'Due:', _withRupee(invoice.dueAmt),
+      align: PosAlign.right, fontSize: 2, bold: true, linesAfter: 1);
+  return bytes;
+}
+
+List<int> _generateText(
+  Generator generator,
+  String text, {
+  double fontSize = 1.0,
+  bool bold = false,
+  bool underline = false,
+  PosAlign align = PosAlign.left,
+  int linesAfter = 0,
+}) {
+  PosTextSize textSize;
+  if (fontSize >= 1.5) {
+    textSize = PosTextSize.size2;
+  } else {
+    textSize = PosTextSize.size1;
+  }
+  return generator.text(
+    text,
+    styles: PosStyles(
+      align: align,
+      bold: bold,
+      underline: underline,
+      height: textSize,
+      width: textSize,
+    ),
+    linesAfter: linesAfter,
+  );
 }
 
 String _getCustomerAddress(Customer customer) {
@@ -177,3 +404,16 @@ String _getCustomerAddress(Customer customer) {
 }
 
 bool _isStringNullOrEmpty(String? value) => Util.isStringNullOrEmpty(value);
+
+String _getItemDescription(InvoiceItem item) {
+  String description = item.name;
+  if (!item.isAddOnItem) {
+    description += ' ${item.weightStr}';
+  }
+  return Util.toTitleCase(description);
+}
+
+// Reusable function to add Rupee symbol
+String _withRupee(String value) {
+  return 'Rs.$value';
+}
