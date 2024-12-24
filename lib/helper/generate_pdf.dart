@@ -37,6 +37,8 @@ class GeneratePdf {
         await _getInvoiceModel(order, branch: branch, posInvoice: posInvoice);
     inspect(invoice);
     if (invoice != null) {
+      logoBytes = await _loadImageFromAssets(
+          Util.loadBranchLogoBytesPath(branch, posInvoice));
       var pdf = await generatePosInvoiceView(
         invoice: invoice,
         logoBytes: logoBytes!,
